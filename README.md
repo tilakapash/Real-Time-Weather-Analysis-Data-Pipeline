@@ -82,6 +82,85 @@ Below is the **UML diagram** for the data model that will store processed weathe
   - `timestamp`: The timestamp when the data was collected.
 
 ---
+### **File Structure**
+
+```plaintext
+.
+├── .gitignore
+├── airflow.cfg
+├── dags/
+│   ├── __init__.py
+│   └── weather_data_pipeline.py
+├── db/
+│   ├── init.sql
+│   ├── run.sh
+│   ├── schema.sql
+│   └── setup.sql
+├── docker/
+│   ├── docker-compose.yml
+│   └── Dockerfile
+├── kafka/
+│   ├── kafka_consumer.py
+│   └── kafka_producer.py
+├── LICENSE
+├── notebooks/
+│   └── data_exploration.ipynb
+├── README.md
+├── requirements.txt
+├── scripts/
+│   ├── start_airflow.sh
+│   ├── start_kafka.sh
+│   └── start_spark.sh
+├── setup.py
+├── spark/
+│   ├── __init__.py
+│   └── weather_data_processor.py
+└── tests/
+    ├── test_airflow_dag.py
+    ├── test_kafka_producer.py
+    └── test_spark_processor.py
+```
+
+1. **`dags/`**: Contains the Airflow DAG scripts.
+   - `weather_data_pipeline.py`: The main Airflow DAG script for orchestrating the pipeline.
+
+2. **`kafka/`**: Contains Kafka-related scripts.
+   - `kafka_producer.py`: Script to produce weather data to Kafka.
+   - `kafka_consumer.py`: Script to consume weather data from Kafka (if needed).
+
+3. **`spark/`**: Contains Spark-related scripts.
+   - `weather_data_processor.py`: Script to process weather data using Spark's Structured Streaming.
+
+4. **`db/`**: Contains database initialization and schema scripts.
+   - `run.sh`: shell script that automates the database setup process
+   - `setup.sql`: Creates the database
+   - `schema.sql`: Creates tables and relationships
+   - `init.sql`: Populates initial data
+
+6. **`docker/`**: Contains Docker-related files.
+   - `Dockerfile`: Dockerfile to build the project container.
+   - `docker-compose.yml`: Docker Compose file to set up the environment with Kafka, Spark, Airflow, and PostgreSQL.
+
+7. **`notebooks/`**: Contains Jupyter notebooks for data exploration and analysis.
+   - `data_exploration.ipynb`: Notebook for exploring and visualizing weather data.
+
+8. **`scripts/`**: Contains bash scripts to start various components.
+   - `start_airflow.sh`: Script to start Airflow web server and scheduler.
+   - `start_kafka.sh`: Script to start Kafka services.
+   - `start_spark.sh`: Script to start Spark services.
+
+9. **`tests/`**: Contains test scripts.
+   - `test_kafka_producer.py`: Tests for the Kafka producer.
+   - `test_spark_processor.py`: Tests for the Spark data processing.
+   - `test_airflow_dag.py`: Tests for the Airflow DAG.
+
+10. **`airflow.cfg`**: Configuration file for Airflow.
+11. **`requirements.txt`**: Lists Python dependencies.
+12. **`README.md`**: Project overview and instructions.
+13. **`LICENSE`**: License file.
+14. **`setup.py`**: Setup script for the project.
+
+---
 
 ### **Getting Started**
 
