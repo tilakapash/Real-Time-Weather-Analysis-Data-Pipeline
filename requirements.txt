@@ -1,0 +1,32 @@
+# Core Dependencies
+python-dotenv==1.0.0
+requests==2.31.0
+
+# Apache Airflow
+apache-airflow==2.7.1
+apache-airflow-providers-postgres==5.6.1
+
+# Apache Kafka
+kafka-python==2.0.2
+confluent-kafka==2.2.0
+
+# Apache Spark
+pyspark==3.4.1
+findspark==2.0.1
+
+# Database
+psycopg2-binary==2.9.9
+SQLAlchemy==2.0.21
+
+# Data Processing
+pandas==2.1.1
+numpy==1.24.3
+
+# Testing
+pytest==7.4.2
+pytest-cov==4.1.0
+
+# Jupyter (for data exploration)
+jupyter==1.0.0
+notebook==7.0.4
+ipykernel==6.25.2
