@@ -1,4 +1,4 @@
-# Real-Time Weather Analysis Data Pipeline**
+# Real-Time Weather Analysis Data Pipeline
 
 ### **Project Overview**
 
